@@ -16,7 +16,7 @@ const scrapeController = async (browserInstance) => {
             for (let link of item) productPromise.push(await scrapers.scraper(browser, link))
         }
         const rs = await Promise.all(productPromise)
-        fs.writeFile('ecommerce.json', JSON.stringify(rs), (err) => {
+        fs.writeFile('data2.json', JSON.stringify(rs), (err) => {
             if (err) console.log('Ghi data vô file json thất bại: ' + err)
             console.log('Thêm data thanh công !.')
         })
